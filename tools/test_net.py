@@ -1,21 +1,21 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
 # Set up custom environment before nearly anything else is imported
 # NOTE: this should be the first import (no not reorder)
-from maskrcnn_benchmark.utils.env import setup_environment  # noqa F401 isort:skip
+from asynet_mask_rcnn.utils.env import setup_environment  # noqa F401 isort:skip
 
 import argparse
 import os
 
 import torch
-from maskrcnn_benchmark.config import cfg
-from maskrcnn_benchmark.data import make_data_loader
-from maskrcnn_benchmark.engine.inference import inference
-from maskrcnn_benchmark.modeling.detector import build_detection_model
-from maskrcnn_benchmark.utils.checkpoint import DetectronCheckpointer
-from maskrcnn_benchmark.utils.collect_env import collect_env_info
-from maskrcnn_benchmark.utils.comm import synchronize, get_rank
-from maskrcnn_benchmark.utils.logger import setup_logger
-from maskrcnn_benchmark.utils.miscellaneous import mkdir
+from asynet_mask_rcnn.config import cfg
+from asynet_mask_rcnn.data import make_data_loader
+from asynet_mask_rcnn.engine.inference import inference
+from asynet_mask_rcnn.modeling.detector import build_detection_model
+from asynet_mask_rcnn.utils.checkpoint import DetectronCheckpointer
+from asynet_mask_rcnn.utils.collect_env import collect_env_info
+from asynet_mask_rcnn.utils.comm import synchronize, get_rank
+from asynet_mask_rcnn.utils.logger import setup_logger
+from asynet_mask_rcnn.utils.miscellaneous import mkdir
 
 # Check if we can enable mixed-precision via apex.amp
 try:
@@ -62,7 +62,7 @@ def main():
     cfg.freeze()
 
     save_dir = ""
-    logger = setup_logger("maskrcnn_benchmark", save_dir, get_rank())
+    logger = setup_logger("asynet_mask_rcnn", save_dir, get_rank())
     logger.info("Using {} GPUs".format(num_gpus))
     logger.info(cfg)
 

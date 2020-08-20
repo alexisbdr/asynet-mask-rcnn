@@ -6,7 +6,7 @@ MODEL:
     POST_NMS_TOP_N_TEST: 1000
   ROI_MASK_HEAD:
     PREDICTOR: "MaskRCNNC4Predictor"
-    SHARE_BOX_FEATURE_EXTRACTOR: True
+    SHARE_BOX_FEATURE_EXTRACTOR: False
   MASK_ON: True
 DATASETS:
   TRAIN: ("coco_2014_train", "coco_2014_valminusminival")

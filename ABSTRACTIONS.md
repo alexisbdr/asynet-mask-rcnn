@@ -1,5 +1,5 @@
 ## Abstractions
-The main abstractions introduced by `maskrcnn_benchmark` that are useful to
+The main abstractions introduced by `asynet_mask_rcnn` that are useful to
 have in mind are the following:
 
 ### ImageList
@@ -16,7 +16,7 @@ We provide a convenience function `to_image_list` that accepts a few different
 input types, including a list of tensors, and returns an `ImageList` object.
 
 ```python
-from maskrcnn_benchmark.structures.image_list import to_image_list
+from asynet_mask_rcnn.structures.image_list import to_image_list
 
 images = [torch.rand(3, 100, 200), torch.rand(3, 150, 170)]
 batched_images = to_image_list(images)
@@ -39,7 +39,7 @@ for each bounding box, such as labels, visibility, probability scores etc.
 
 Here is an example on how to create a `BoxList` from a list of coordinates:
 ```python
-from maskrcnn_benchmark.structures.bounding_box import BoxList, FLIP_LEFT_RIGHT
+from asynet_mask_rcnn.structures.bounding_box import BoxList, FLIP_LEFT_RIGHT
 
 width = 100
 height = 200

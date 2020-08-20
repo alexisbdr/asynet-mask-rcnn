@@ -3,12 +3,12 @@ import cv2
 import torch
 from torchvision import transforms as T
 from torchvision.transforms import functional as F
-from maskrcnn_benchmark.modeling.detector import build_detection_model
-from maskrcnn_benchmark.utils.checkpoint import DetectronCheckpointer
-from maskrcnn_benchmark.structures.image_list import to_image_list
-from maskrcnn_benchmark.modeling.roi_heads.mask_head.inference import Masker
-from maskrcnn_benchmark import layers as L
-from maskrcnn_benchmark.utils import cv2_util
+from asynet_mask_rcnn.modeling.detector import build_detection_model
+from asynet_mask_rcnn.utils.checkpoint import DetectronCheckpointer
+from asynet_mask_rcnn.structures.image_list import to_image_list
+from asynet_mask_rcnn.modeling.roi_heads.mask_head.inference import Masker
+from asynet_mask_rcnn import layers as L
+from asynet_mask_rcnn.utils import cv2_util
 
 class Resize(object):
     def __init__(self, min_size, max_size):
@@ -408,7 +408,7 @@ class COCODemo(object):
 
 import numpy as np
 import matplotlib.pyplot as plt
-from maskrcnn_benchmark.structures.keypoint import PersonKeypoints
+from asynet_mask_rcnn.structures.keypoint import PersonKeypoints
 
 def vis_keypoints(img, kps, kp_thresh=2, alpha=0.7):
     """Visualizes keypoints (adapted from vis_one_image).

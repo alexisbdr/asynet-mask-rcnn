@@ -2,7 +2,7 @@
 import argparse
 import cv2
 
-from maskrcnn_benchmark.config import cfg
+from asynet_mask_rcnn.config import cfg
 from predictor import COCODemo
 
 import time
